@@ -1,0 +1,43 @@
+{
+    "author": "DeadlyKungFu.Ninja",
+    "version": "0.1",
+    "server_scripts": [
+        "omg/utils/json.lua",
+        "omg/utils/lodash.lua",
+        "omg/server/main.lua",
+        "omg/server/debug.lua",
+        "omg/server/lobby.lua",
+        "omg/server/functions.lua",
+        "omg/server/gm_manager.lua",
+        "omg/server/events/framework.lua",
+        "omg/server/events/gamemode.lua",
+        "gamemodes/omg_test_gm/server.lua",
+        "gamemodes/ogk_tdm/libs/json.lua",
+        "gamemodes/ogk_tdm/libs/lodash.lua",
+        "gamemodes/ogk_tdm/server/regen.lua",
+        "gamemodes/ogk_tdm/server/synchro.lua",
+        "gamemodes/ogk_tdm/server/main.lua"
+    ],
+    "client_scripts": [
+        "omg/utils/json.lua",
+        "omg/utils/lodash.lua",
+        "omg/client/data.lua",
+        "omg/client/lobby.lua",
+        "omg/client/events/framework.lua",
+        "omg/client/events/gamemode.lua",
+        "gamemodes/ogk_tdm/client/weapon_menu.lua",
+        "gamemodes/ogk_tdm/client/synchro.lua",
+        "gamemodes/ogk_tdm/client/gui.lua"
+    ],
+    "files": [
+        "gamemodes/ogk_tdm/gui/build/static/js/2.chunk.js",
+        "gamemodes/ogk_tdm/gui/build/static/js/main.chunk.js",
+        "gamemodes/ogk_tdm/gui/build/static/js/runtime-main.js",
+        "gamemodes/ogk_tdm/gui/build/static/css/main.css",
+        "gamemodes/ogk_tdm/gui/build/fonts/edunline.ttf",
+        "gamemodes/ogk_tdm/gui/build/fonts/smb.ttf",
+        "gamemodes/ogk_tdm/gui/build/fonts/RingMatrix.ttf",
+        "gamemodes/ogk_tdm/gui/build/fonts/csd.ttf",
+        "gamemodes/ogk_tdm/gui/build/index.html"
+    ]
+}

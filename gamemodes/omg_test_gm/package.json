@@ -1,0 +1,9 @@
+{
+    "author": "BigMistake - DeadlyKungFu.Ninja",
+    "version": "0.1",
+    "server_scripts": [
+        "server.lua"
+    ],
+    "client_scripts": [],
+    "files": []
+}

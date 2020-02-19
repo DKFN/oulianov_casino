@@ -1,0 +1,48 @@
+.leaderboard_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    opacity: 0.7;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.leaderboard_row {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 5px;
+    color: orange;
+    min-width: 100px;
+}
+
+.leaderboard_points {
+    text-align: center;
+    padding: 2px;
+    font-size: 34px;
+}
+
+#rowPolice {
+    border: 2px solid blue;
+    background-color: blue;
+    color: white;
+}
+
+#rowTerro {
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+}
+
+.leaderboard_level {
+    font-size: 10px;
+}
+
+.leader {
+    border: 2px solid gold;
+}

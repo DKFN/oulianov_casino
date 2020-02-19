@@ -1,0 +1,29 @@
+{
+    "author": "DeadlyKungFu.Ninja - Kemro",
+    "version": "0.1",
+    "server_scripts": [
+        "libs/json.lua",
+        "libs/lodash.lua",
+        "server/regen.lua",
+        "server/synchro.lua",
+        "server/main.lua"
+    ],
+    "client_scripts": [
+        "libs/json.lua",
+        "libs/lodash.lua",
+        "client/weapon_menu.lua",
+        "client/synchro.lua",
+        "client/gui.lua"
+    ],
+    "files": [
+        "gui/build/static/js/2.chunk.js",
+        "gui/build/static/js/main.chunk.js",
+        "gui/build/static/js/runtime-main.js",
+        "gui/build/static/css/main.css",
+        "gui/build/fonts/edunline.ttf",
+        "gui/build/fonts/smb.ttf",
+        "gui/build/fonts/RingMatrix.ttf",
+        "gui/build/fonts/csd.ttf",
+        "gui/build/index.html"
+    ]
+}
