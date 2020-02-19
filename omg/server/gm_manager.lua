@@ -65,6 +65,8 @@ function OMG.GameManager.PlayerJoinGameMode(name, player)
     CallRemoteEvent(player, "OMG:"..gamemode.name..":OnPackageStart")
     CallRemoteEvent(player, "OMG:"..gamemode.name..":OnPlayerJoin", player)
     CallRemoteEvent(player, "OMG:_FW:NOTIFY_PLAYERS_IN_GAMEMODE", gamemode.name)
+    CallRemoteEvent(player, "OMG:PLAYER_LOAD_GAMEMODE", gamemode.name)
+    
     Delay(1000, function()
     end)
 end
@@ -74,5 +76,7 @@ function OMG.GameManager.PlayerLeaveGameMode(name, player)
     gamemode.players = _.filter(gamemode.players, function(p) return p ~= player end)
     gamemodes[gamemode.id] = gamemode
     SetPlayerDimension(player, 0)
-    CallRemoteEvent("OMG:"..name..":OnPlayerQuit", player)
+    CallEvent("OMG:"..name..":OnPlayerQuit", player)
+    CallRemoteEvent(player, "OMG:"..name..":OnPlayerQuit")
+    CallRemoteEvent(player, "OMG:_FW:NOTIFY_PLAYERS_LEAVE_GAMEMODE", name)
 end

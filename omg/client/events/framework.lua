@@ -16,7 +16,7 @@ AddRemoteEvent("OMG:_FW:NOTIFY_PLAYERS_IN_GAMEMODE", function(gamemode)
 end)
 
 
-AddRemoteEvent("OMG:_FW:NOTIFY_PLAYERS_LEAVE_GAMEMODE", function()
+AddRemoteEvent("OMG:_FW:NOTIFY_PLAYERS_LEAVE_GAMEMODE", function(gamemode)
     OMG_DATA.Gamemode = nil
     CallEvent(player, "OMG:"..gamemode..":OnPackageStop")
 end)

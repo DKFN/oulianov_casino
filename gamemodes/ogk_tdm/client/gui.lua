@@ -34,6 +34,10 @@ AddRemoteEvent("OGKTDM:SetWinState", function(winState)
 	ExecuteWebJS(menuGui, "setWinState('"..winState.."');")
 end)
 
+AddEvent("OMG:OGKTDM:OnPackageStop", function()
+	DestroyWebUI(menuGui)
+end)
+
 
 CreateTimer(function()
 	local weapon, total, inmag = GetPlayerWeapon()

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="index.css" />
-        <link rel="stylesheet" href="loader.css" />
+        <link rel="stylesheet" href="http://asset/oulianov_casino/oulianov/loaderUI/index.css" />
+        <link rel="stylesheet" href="http://asset/oulianov_casino/oulianov/loaderUI/loader.css" />
+        <title>Oulianov Loader</title>
     </head>
     <body>
         <div class="header">
@@ -37,7 +38,7 @@
         <div class="gmLoaderContainer">
             <div class="loader"></div>
             <div>
-                Entering Gamemode: OGK_GG
+                Entering Gamemode: <span id="gamemodeName"></span>
             </div>
         </div>
         </div>
@@ -47,4 +48,9 @@
             Press F8 in game to see all the keys
         </div>
     </body>
+    <script type="application/javascript">
+        function SetGamemodeName(gmName) {
+            document.getElementById("gamemodeName").innerText = gmName;
+        }
+    </script>
 </html>

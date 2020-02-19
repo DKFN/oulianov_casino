@@ -28,11 +28,15 @@
         "omg/client/lobby.lua",
         "omg/client/events/framework.lua",
         "omg/client/events/gamemode.lua",
+        "oulianov/loaderUI/main.lua",
         "gamemodes/ogk_tdm/client/weapon_menu.lua",
         "gamemodes/ogk_tdm/client/synchro.lua",
         "gamemodes/ogk_tdm/client/gui.lua"
     ],
     "files": [
+        "oulianov/loaderUI/index.html",
+        "oulianov/loaderUI/index.css",
+        "oulianov/loaderUI/loader.css",
         "gamemodes/ogk_tdm/gui/build/static/js/2.chunk.js",
         "gamemodes/ogk_tdm/gui/build/static/js/main.chunk.js",
         "gamemodes/ogk_tdm/gui/build/static/js/runtime-main.js",

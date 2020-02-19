@@ -121,6 +121,8 @@ AddEvent("OMG:OGKTDM:OnPlayerJoin", function(playerid)
 end)
 
 AddEvent("OMG:OGKTDM:OnPlayerSpawn", function(playerid)
+    CallRemoteEvent(playerid, "OMG:PLAYER_LOAD_DONE")
+    
     local p = Players[playerid]
     SetPlayerWeapon(playerid, 1, 0, true, 1, true)
     SetPlayerWeapon(playerid, 1, 0, true, 2)
@@ -158,7 +160,7 @@ AddEvent("OMG:OGKTDM:OnPlayerSpawn", function(playerid)
     _.print(p)
     local team = p.team
     local assigned_spawn = teams[team].spawns[Random(1, #teams[team].spawns)]
-    SetPlayerSpawnLocation(playerid, assigned_spawn[1], assigned_spawn[2], assigned_spawn[3] + 500, assigned_spawn[4])
+    SetPlayerLocation(playerid, assigned_spawn[1], assigned_spawn[2], assigned_spawn[3] + 500, assigned_spawn[4])
 end)
 
 AddEvent("OMG:OGKTDM:OnPlayerQuit", function(player)
