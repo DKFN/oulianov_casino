@@ -41,6 +41,7 @@ AddEvent("OnPackageStart", function()
         print("GAMEMODE WILL NOT WORK")
     end
     gmId = OMG.GameManager.Register("OGKTDM", { author = "DeadlyKungFu.Ninja & Kemro", fullName = "Team deathmatch !" })
+    CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', gmId)
 end)
 
 AddEvent("OMG:OGKTDM:OnPackageStart", function(data)

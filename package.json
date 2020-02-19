@@ -4,6 +4,9 @@
     "server_scripts": [
         "omg/utils/json.lua",
         "omg/utils/lodash.lua",
+        "vendors/digital/onset_world/common/json.lua",
+        "vendors/digital/onset_world/common/file.lua",
+        "vendors/digital/onset_world/server.lua",
         "omg/server/main.lua",
         "omg/server/debug.lua",
         "omg/server/lobby.lua",
