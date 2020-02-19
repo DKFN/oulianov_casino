@@ -1,0 +1,32 @@
+body, html {
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gmLoaderContainer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    color: red;
+    font-size: 24px;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+ }
+
+.oulianovSplash {
+    color: red;
+    text-align: left;
+}
+
+.oulianovDice {
+    color: red;
+}
+
+.oulianovDice {
+}
