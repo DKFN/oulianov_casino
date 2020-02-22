@@ -18,5 +18,5 @@ end)
 
 AddRemoteEvent("OMG:_FW:NOTIFY_PLAYERS_LEAVE_GAMEMODE", function(gamemode)
     OMG_DATA.Gamemode = nil
-    CallEvent(player, "OMG:"..gamemode..":OnPackageStop")
+    CallEvent("OMG:"..gamemode..":OnPackageStop")
 end)
