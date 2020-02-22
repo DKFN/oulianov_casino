@@ -30,3 +30,7 @@ end
 function OMG._Cache.Invalidate(col)
   _cache[col] = {}
 end
+
+function OMG.Refresh(col, newcol)
+  -- _.cache[col] = _.groupBy(newCol, )
+end

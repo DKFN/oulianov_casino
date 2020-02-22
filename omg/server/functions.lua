@@ -14,3 +14,14 @@ end
 function OMG._.GetAllPlayers(gmId)
     return OMG.GameManager.GetGamemodes()[gmId].players
 end
+
+function OMG._.GetAllObjects(gmId)
+    -- return OMG.GameManager.GetGamemodes()[gmId].players
+end
+
+function OMG._.GetToolBox(gmId)
+    local tools = {}
+    tools.GetAllPlayers = function() return OMG._.GetAllPlayers(gmId) end
+    tools.GetAllObjects = function() return OMG._.GetAllObjects(gmId) end
+    return tools
+end

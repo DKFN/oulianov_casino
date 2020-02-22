@@ -84,7 +84,6 @@ function OMG.GameManager.PlayerLeaveGameMode(name, player)
 
     OMG._Cache.Remove("players", player)
 
-    _cache.players = {}
     SetPlayerDimension(player, 0)
     CallEvent("OMG:"..name..":OnPlayerQuit", player)
     CallRemoteEvent(player, "OMG:"..name..":OnPlayerQuit")
