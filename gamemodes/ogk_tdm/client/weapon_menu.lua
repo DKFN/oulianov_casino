@@ -10,7 +10,7 @@ function closeMenu()
     weaponMenuStep = 0
 end
 
-AddEvent("OnKeyPress", function(key)
+AddEvent("OMG:OGKTDM:OnKeyPress", function(key)
     -- AddPlayerChat(weaponMenuStep)
     -- AddPlayerChat(key)
     if weaponMenuStep == 2 then

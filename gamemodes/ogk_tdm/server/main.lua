@@ -40,7 +40,17 @@ AddEvent("OnPackageStart", function()
         print("OMG IS NOT SETUP CORRECTLY")
         print("GAMEMODE WILL NOT WORK")
     end
-    gmId = OMG.GameManager.Register("OGKTDM", { author = "DeadlyKungFu.Ninja & Kemro", fullName = "Team deathmatch !" })
+    gmId = OMG.GameManager.Register("OGKTDM", { 
+        author = "DeadlyKungFu.Ninja & Kemro", 
+        fullName = "Team deathmatch !" ,
+        lobby = {
+            npc = {
+                clothId = 13,
+                pos = { x = 135164.0, y = 191875.0, z = 1239.0 + 60, yaw = 0}
+            },
+            maxPlayers = 8
+        }
+    })
     CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', gmId)
 end)
 

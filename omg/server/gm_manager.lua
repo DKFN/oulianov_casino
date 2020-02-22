@@ -8,7 +8,9 @@
 local gamemodes = {}
 
 -- Refer to readme for data structure documentation (GamemodeStructure)
-OMG.GameManager = {}
+OMG.GameManager = {
+
+}
 
 -- Registers a gamemode on its Package start so 
 function OMG.GameManager.Register(name, params)
@@ -44,11 +46,12 @@ end
 
 -- TODO: Replace with memoized version for performance
 function OMG.GameManager.GetPlayerGamemode(playerid)
-    return _.find(gamemodes, function(gamemode)
+    local gm = _.find(gamemodes, function(gamemode)
         return _.find(gamemode.players, function(player)
             return player == playerid
         end)
     end)
+    if gm then return gm else return "LOBBBY" end
 end
 
 function OMG.GameManager.Remove(name)
@@ -58,6 +61,9 @@ end
 function OMG.GameManager.PlayerJoinGameMode(name, player)
     local gamemode = OMG.GameManager.GetGamemode(name)
     _.push(gamemode.players, player)
+
+    OMG._Cache.Store("players", name, player)
+
     SetPlayerDimension(player, gamemode.dimension)
 
     CallEvent("OMG:"..gamemode.name..":OnPlayerJoin", player)
@@ -75,6 +81,10 @@ function OMG.GameManager.PlayerLeaveGameMode(name, player)
     local gamemode = OMG.GameManager.GetGamemode(name)
     gamemode.players = _.filter(gamemode.players, function(p) return p ~= player end)
     gamemodes[gamemode.id] = gamemode
+
+    OMG._Cache.Remove("players", player)
+
+    _cache.players = {}
     SetPlayerDimension(player, 0)
     CallEvent("OMG:"..name..":OnPlayerQuit", player)
     CallRemoteEvent(player, "OMG:"..name..":OnPlayerQuit")

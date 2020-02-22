@@ -1,28 +1,47 @@
 -- This is the router file for all events
+local function safePlayerGMName(playerid)
+    local gamemode = OMG.GameManager.GetPlayerGamemode(playerid)
+    if gamemode and gamemode.name then return gamemode.name else return "LOBBY" end
+end
 
-AddEvent("OnPlayerDeath", function(victim, ...)
-    local gamemode = OMG.GameManager.GetPlayerGamemode(victim)
-    CallEvent("OMG:"..gamemode.name..":OnPlayerDeath", victim, ...)
+local function wrapPlayerEvent(eventName)
+    AddEvent(eventName, function(id, ...)
+        CallEvent("OMG:"..safePlayerGMName(id)..":"..eventName, id, ...)
+    end)
+end
+
+AddEvent("OnPackageStart", function()
+
+    -- Player events
+    wrapPlayerEvent("OnPlayerDeath")
+    wrapPlayerEvent("OnPlayerWeaponShot")
+    wrapPlayerEvent("OnPlayerQuit")
+    wrapPlayerEvent("OnPlayerSpawn")
+    wrapPlayerEvent("OnPlayerStreamOut")
+    wrapPlayerEvent("OnPlayerStreamIn")
+    wrapPlayerEvent("OnPlayerPickupHit")
+    wrapPlayerEvent("OnPlayerChat")
+    wrapPlayerEvent("OnPlayerChatCommand")
+    wrapPlayerEvent("OnPlayerInteractDoor")
+
+    
 end)
 
-AddEvent("OnPlayerWeaponShot", function(player, ...)
-    local gamemode = OMG.GameManager.GetPlayerGamemode(player)
-    CallEvent("OMG:"..gamemode.name..":OnPlayerWeaponShot", player, ...)
-end)
 
-AddEvent("OnPlayerQuit", function(player)
-    local gamemode = OMG.GameManager.GetPlayerGamemode(player)
-    OMG.GameManager.PlayerLeaveGameMode(player)
-    CallEvent("OMG:"..gamemode.name..":OnPlayerQuit", player)
-end)
+-- AddEvent("OnPlayerDeath", function(victim, ...)
+--     CallEvent("OMG:"..safePlayerGMName(victim)..":OnPlayerDeath", victim, ...)
+-- end)
 
-AddEvent("OnPlayerSpawn", function(player)
-    local gamemode = OMG.GameManager.GetPlayerGamemode(player)
-    if not gamemode then
-        print("[OMG] Player in lobby " .. player)
-        return
-    end
-    print("Player spawned in gamemode")
-    CallEvent("OMG:"..gamemode.name..":OnPlayerSpawn", player)
-end)
+-- AddEvent("OnPlayerWeaponShot", function(player, ...)
+--     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerWeaponShot", player, ...)
+-- end)
+
+-- AddEvent("OnPlayerQuit", function(player)
+--     OMG.GameManager.PlayerLeaveGameMode(player)
+--     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerQuit", player)
+-- end)
+
+-- AddEvent("OnPlayerSpawn", function(player)
+--     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerSpawn", player)
+-- end)
 

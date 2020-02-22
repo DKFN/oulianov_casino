@@ -4,7 +4,6 @@
     "server_scripts": [
         "omg/utils/json.lua",
         "omg/utils/lodash.lua",
-        "omg/utils/memoize.lua",
         "vendors/digital/onset_world/common/json.lua",
         "vendors/digital/onset_world/common/file.lua",
         "vendors/digital/onset_world/server.lua",
@@ -13,8 +12,10 @@
         "omg/server/lobby.lua",
         "omg/server/functions.lua",
         "omg/server/gm_manager.lua",
+        "omg/server/npc2gm/main.lua",
         "omg/server/events/framework.lua",
         "omg/server/events/gamemode.lua",
+        "omg/server/cache.lua",
         "gamemodes/omg_test_gm/server.lua",
         "gamemodes/ogk_tdm/libs/json.lua",
         "gamemodes/ogk_tdm/libs/lodash.lua",
