@@ -1,7 +1,7 @@
 
 local pendingPlayers = {}
 Lobby = {
-    location = {x = 135305.0, y = 191695.0, z = 1294 + 100, yaw = - 180}
+    location = {x = -78760.0, y = -159876.0, z = 3313 + 100, yaw = -180}
 }
 
 function Lobby.OnPlayerJoin(player)

@@ -62,7 +62,7 @@ function OMG.GameManager.PlayerJoinGameMode(name, player)
     local gamemode = OMG.GameManager.GetGamemode(name)
     _.push(gamemode.players, player)
 
-    OMG._Cache.Store("players", name, player)
+    -- OMG._Cache.Store("players", name, player)
 
     SetPlayerDimension(player, gamemode.dimension)
 
@@ -82,7 +82,7 @@ function OMG.GameManager.PlayerLeaveGameMode(name, player)
     gamemode.players = _.filter(gamemode.players, function(p) return p ~= player end)
     gamemodes[gamemode.id] = gamemode
 
-    OMG._Cache.Remove("players", player)
+    -- OMG._Cache.Remove("players", player)
 
     SetPlayerDimension(player, 0)
     CallEvent("OMG:"..name..":OnPlayerQuit", player)

@@ -27,7 +27,9 @@ end)
 
 AddRemoteEvent("OGKTDM:NotifyGameState", function(data)
 	--AddPlayerChat("Game state: "..data)
-	ExecuteWebJS(menuGui, "setGameState('"..data.."');")
+	if menuGui then
+		ExecuteWebJS(menuGui, "setGameState('"..data.."');")
+	end
 end)
 
 AddRemoteEvent("OGKTDM:SetWinState", function(winState)

@@ -42,11 +42,11 @@ AddEvent("OnPackageStart", function()
     end
     gmId = OMG.GameManager.Register("OGKTDM", { 
         author = "DeadlyKungFu.Ninja & Kemro", 
-        fullName = "Team deathmatch !" ,
+        fullName = "Team deathmatch",
         lobby = {
             npc = {
                 clothId = 13,
-                pos = { x = 135164.0, y = 191875.0, z = 1239.0 + 60, yaw = 0}
+                pos = { x = -78568.0, y = -159884.0, z = 3313.0, yaw = 90}
             },
             maxPlayers = 8
         }

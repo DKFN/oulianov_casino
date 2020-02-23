@@ -14,6 +14,7 @@ AddEvent("OnPackageStart", function()
 
     -- Player events
     wrapPlayerEvent("OnPlayerDeath")
+    wrapPlayerEvent("OnPlayerDamage")
     wrapPlayerEvent("OnPlayerWeaponShot")
     wrapPlayerEvent("OnPlayerQuit")
     wrapPlayerEvent("OnPlayerSpawn")
@@ -23,8 +24,11 @@ AddEvent("OnPackageStart", function()
     wrapPlayerEvent("OnPlayerChat")
     wrapPlayerEvent("OnPlayerChatCommand")
     wrapPlayerEvent("OnPlayerInteractDoor")
+    wrapPlayerEvent("OnPlayerEnterVehicle")
+    wrapPlayerEvent("OnPlayerLeaveVehicle")
+    wrapPlayerEvent("OnPlayerStateChange")
 
-    
+
 end)
 
 

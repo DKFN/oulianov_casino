@@ -23,5 +23,13 @@ function OMG._.GetToolBox(gmId)
     local tools = {}
     tools.GetAllPlayers = function() return OMG._.GetAllPlayers(gmId) end
     tools.GetAllObjects = function() return OMG._.GetAllObjects(gmId) end
+    tools.GetDimension = function() return gmId end
+
+    -- Redirected functions for convenience in case of misuse
+    tools.GetPlayerHeading = function(...) return GetPlayerHeading(...) end
+    tools.GetPlayerHealth = function(...) return GetPlayerHealth(...) end
+    tools.GetPlayerArmor = function(...) return GetPlayerWeapon(...) end
+    tools.GetPlaeyrHeadSize = function(...) return GetPlaeyrHeadSize(...) end
+    
     return tools
 end
