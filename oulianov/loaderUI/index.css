@@ -32,3 +32,10 @@ body, html {
     color: red;
     font-size: 2vh;
 }
+
+.loadingBody {
+    margin-top: 2vh;
+    text-align: center;
+    color: red;
+    font-size: 3vh;
+}

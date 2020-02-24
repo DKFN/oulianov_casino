@@ -15,13 +15,13 @@ local function SearchGamemodeNPCS()
                     npcParams.pos.yaw
                 )
                 SetNPCPropertyValue(npcs[gm.id].npcId, "clothId", gm.params.lobby.npc.clothId, true)
+
                 -- TODO: Obviously clientside :D
                 -- SetNPCClothingPreset(npcParams.clothId)
                 npcs[gm.id].textId = CreateText3D(gm.params.fullName, 20, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z + 100, 0, 0, 0)          
                 npcs[gm.id].markerId = CreateObject(2, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z - 100)
                 SetObjectAttached(npcs[gm.id].markerId, ATTACH_NPC, npcs[gm.id].npcId, 0, 0, - 70)
-                
-                
+                npcs[gm.id].gm = gm
             else
                 -- Just refresh playercount or something
             end
@@ -30,12 +30,31 @@ local function SearchGamemodeNPCS()
 end
 AddEvent("OMG:_FW:NPC2GM:SearchGamemodeNPCS", SearchGamemodeNPCS)
 
+AddRemoteEvent("ÖMG:_FW:NPC2GM:PlayerNPCInterract", function(player, npc)
+    local px, py, pz = GetPlayerLocation(player)
+    local nx, ny, nz = GetNPCLocation(npc)
+    local distance = GetDistance3D(px, py, pz, nx, ny, nz)
+    print("Received query from ... "..player)
+    if distance <= 150 then
+        local npcGamemode = _.find(npcs, function(n) return n.npcId == npc end)
+        print("Distnance ... "..distance)
+        _.print(npcGamemode)
+        if npcGamemode then
+            OMG.GameManager.PlayerJoinGameMode(npcGamemode.gm.name, player)
+        end
+    end
+end)
+
+AddRemoteEvent("ÖMG:_FW:ReturnToLobby", function(player)
+    Lobby.BackToLobby(player)
+end)
+
 AddEvent("OnPackageStart", function()
     Delay(2000, function()
         CallEvent("OMG:_FW:NPC2GM:SearchGamemodeNPCS")
     end)
     CreateCountTimer(function()
         CallEvent("OMG:_FW:NPC2GM:SearchGamemodeNPCS")
-    end, 5000, 100)
+    end, 5000, 20)
 end)
 

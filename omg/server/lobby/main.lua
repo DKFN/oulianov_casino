@@ -28,4 +28,6 @@ function Lobby.BackToLobby(player)
     SetPlayerWeapon(player, 1, 0, true, 1, 0)
     SetPlayerWeapon(player, 1, 0, true, 2, 0)
     SetPlayerWeapon(player, 1, 0, true, 3, 0)
+
+    CallRemoteEvent(player, "OMG:PLAYER_LOAD_DONE")
 end
