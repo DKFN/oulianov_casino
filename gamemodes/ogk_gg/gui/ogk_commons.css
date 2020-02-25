@@ -1,0 +1,65 @@
+/**
+ *  This file contains the shared styles between gamemodes
+ */
+
+/* Custom Fonts */
+@font-face {
+    font-family: pxTitle;
+    /* FIXME: Create common package */
+    src: url(http://asset/oulianov_casino/gamemodes/ogk_tdm/gui/build/fonts/edunline.ttf);
+    color: limegreen;
+}
+
+@font-face {
+    font-family: smb;
+    /* FIXME: Create common package */
+    src: url(http://asset/oulianov_casino/gamemodes/ogk_tdm/gui/build/fonts/smb.ttf);
+    color: limegreen;
+}
+
+@font-face {
+    font-family: atari;
+    /* FIXME: Create common package */
+    src: url(http://asset/oulianov_casino/gamemodes/ogk_tdm/gui/build/fonts/RingMatrix.ttf);
+    color: limegreen;
+}
+
+@font-face {
+    font-family: csswpn;
+    /* FIXME: Create common package */
+    src: url(http://asset/oulianov_casino/gamemodes/ogk_tdm/gui/build/fonts/csd.ttf);
+}
+
+html, pre {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+body {
+    font-family: atari;
+    font-weight: 100;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+.button, .card-header, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .menu-label, .message-header, .tabs, .tag, .title{
+    font-family: pxTitle, cursive;
+    font-weight: 100;
+    color: orange;
+}
+
+.table th, .table {
+    font-family: smb;
+    font-weight: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.ogk-shadowbox {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 6px;
+}
+
+.contained-image {
+    border: 1px solid limegreen;
+}

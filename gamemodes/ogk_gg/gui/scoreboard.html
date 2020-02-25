@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/nuclearbulma.css" />
+        <link rel="stylesheet" href="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/ogk_commons.css" />
+        <link rel="stylesheet" href="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/ogk_ui.css" />
+        <script src="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/js/trad.js"></script>
+        <script src="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/js/jquery.js"></script>
+        <script src="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/js/scoreboard.js"></script>
+    </head>
+    <body>
+        <!-- Splashscreen -->
+        <div class="splash-container" id="ogkggsplash">
+            <pre class="oggSplash">
+                ....                              ..    .                                             _         
+                .x~X77777Hx.                    x .d77"    @77>                                          u          
+               H7X 777777777h.      x.    .      5777R     %7P                  u.    u.          u.    77Nu.   u.  
+              7777:`*777777777:   .@77k  z77u    '777R      .          u      x@77k u@77c.  ...ue777b  '77777.o777c 
+              77777:        `%7  ~"7777 ^7777     777R    .@77u     us777u.  ^"7777""7777"  777R Y777r  ^7777  7777 
+            . `77777          ?>   7777  777R     777R   ''777E` .@77 "7777"   7777  777R   777R I777>   7777  7777 
+            `. ?777%           X   7777  777R     777R     777E  9777  9777    7777  777R   777R I777>   7777  7777 
+              ~*??.            >   7777  777R     777R     777E  9777  9777    7777  777R   777R I777>   7777  7777 
+             .x77777h.        <    7777 ,777B .   777R     777E  9777  9777    7777  777R  u7777cJ777   .7777b.777P 
+            :"""7777777x..  .x    "7777Y 7777"   .777B .   777&  9777  9777   "*77*" 7777"  "*777*P"     ^Y7777*""  
+            `    `*777777777"      `Y"   'YP     ^*777%    R777" "777*""777"    ""   'Y"      'Y"          `Y"      
+                    ""***""                        "%       ""    ^Y"   ^Y'                                         
+                                                                                                                    
+         Onset Gaming Kommunity                                                                                                                  v0.4
+            </pre>
+        </div>
+
+        <div class="splash-container">
+            
+            <div id="serverAndVersion">
+            </div>
+        </div>
+        <!-- End splash section -->
+
+        <!-- Server notification -->
+        <div class="notifications-container splash-container" style="text-align: center; font-family: pxTitle; height: 0">
+            <div class="notification is-white" id="winContainer" style="opacity: 0; color: green">
+                    <div id="winText" style="color: green">
+                    </div>
+                    <div data-trad="scoreboard_won">
+                    </div>
+                    <!-- 
+                    <div class="column"><div class="columns">
+                        <div class="column">
+                            <b>World Rank:</b> #3 </div>
+                            <div class="column">
+                            <b>Total wins:</b> 2 </div>
+                            <div class="column">
+                            <b>Best time:</b> 07:00 
+                        </div>
+                    </div>
+                    !-->
+            </div>
+        </div>
+        <!-- End server noitification -->
+
+        <div class="content oggContent" id="scoreboardContents">
+            <!-- Leaderboard and feature content (MOTD) -->
+            <div class="columns">
+                <div class="column">
+                    <div></div>
+                    <h1 class="title is-1" id="test"><span data-trad="scoreboard"></h1>
+                    <table class="table" id="playertable">
+
+                        <thead>
+                            <tr>
+                                <th data-trad="scoreboard_login"></th>
+                                <th data-trad="scoreboard_level"></th>
+                                <th data-trad="scoreboard_kills"></th>
+                                <th data-trad="scoreboard_death"></th>
+                                <th data-trad="scoreboard_victories"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="title is-1">Alpha note</h1>
+                            <div class="splash-container">
+                                <div class="ogk-shadowbox" style="text-align: left;">                      
+                                    -> <span data-trad="scoreboard_submit"></span> <span style="color:orange" data-trad="scoreboard_suggestions"></span>. <br />
+                                    -> <span data-trad="scoreboard_submit"></span> <span style="color:orange" data-trad="scoreboard_maps"></span>. <br />
+                                    -> <span data-trad="scoreboard_report"></span> <span style="color:orange" data-trad="scoreboard_maps"></span>. <br />
+                                    -> <span data-trad="scoreboard_report"></span> <span style="color:orange" data-trad="scoreboard_cheaters"></span>. <br />
+                                    -> <span data-trad="scoreboard_say"></span> <span style="color:orange" data-trad="scoreboard_hello"></span>! <br />
+
+                                    <center>
+                                        <br />
+                                        => <span style="color:orange" data-trad="scoreboard_in_discord"></span> <= <br />
+                                        <span data-trad="scoreboard_hfgl"></span>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="splash-container">
+                                <div class="ogk-shadowbox partner-pad">
+                                    <h4 data-trad="scoreboard_discord"></h4>
+                                    <span style="font-family: atari; font-size: 24px;" data-trad="scoreboard_discord_link">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of leaderboard and feature content -->
+        </div>
+        <!-- Footer section -->
+        <div class="splash-container">
+            <div class="ogk-footer ogk-shadowbox">
+                <img src="http://asset/oulianov_casino/gamemodes/ogk_gg/gui/images/ogk.png" width="120px" class="contained-image" /> <br />
+                DeadlyKungFu.Ninja - Azgin - Pas de traduction - Night_Man - Alcayezz - Jokinesse - Bambo <br />
+                <span data-trad="scoreboard_external_constributors"></span>: Voltaism - SalsiTV - Digital - Aimague
+            </div>
+        </div>
+
+     
+        <!-- End footer -->
+    </body>
+</html>
