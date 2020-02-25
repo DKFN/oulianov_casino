@@ -24,7 +24,7 @@ AddEvent("OMG:LOBBY:StartTimers", function()
                 SetNPCOutline(v, false)
             end
         end
-    end, 500)
+    end, 100)
 end)
 
 AddEvent("OnKeyPress", function(key)

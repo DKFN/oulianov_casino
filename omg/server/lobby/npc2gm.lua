@@ -18,7 +18,8 @@ local function SearchGamemodeNPCS()
 
                 -- TODO: Obviously clientside :D
                 -- SetNPCClothingPreset(npcParams.clothId)
-                npcs[gm.id].textId = CreateText3D(gm.params.fullName, 20, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z + 100, 0, 0, 0)          
+                npcs[gm.id].textId = CreateText3D(gm.params.fullName, 20, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z + 120, 0, 0, 0)         
+                npcs[gm.id].playerTextId = CreateText3D(#gm.players.."/"..gm.params.lobby.maxPlayers, 12, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z + 100, 0, 0, 0)          
                 npcs[gm.id].markerId = CreateObject(2, npcParams.pos.x, npcParams.pos.y, npcParams.pos.z - 100)
                 SetObjectAttached(npcs[gm.id].markerId, ATTACH_NPC, npcs[gm.id].npcId, 0, 0, - 70)
                 npcs[gm.id].gm = gm

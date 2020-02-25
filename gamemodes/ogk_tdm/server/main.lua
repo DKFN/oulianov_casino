@@ -45,7 +45,7 @@ AddEvent("OnPackageStart", function()
         fullName = "Team deathmatch",
         lobby = {
             npc = {
-                clothId = 13,
+                clothId = 29,
                 pos = { x = -78568.0, y = -159884.0, z = 3313.0, yaw = 90}
             },
             maxPlayers = 8
