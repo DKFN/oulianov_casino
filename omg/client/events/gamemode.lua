@@ -9,18 +9,7 @@ local function wrapPlayerEvent(eventName)
 end
 
 AddEvent("OnPackageStart", function()
-    wrapPlayerEvent("OnPackageStart")
-    wrapPlayerEvent("OnPackageStart")
-end)
-AddEvent("OnPlayerSpawn", function()
-    AddPlayerChat("Received event Player spawn")
-    CallEvent("OMG:"..safeGMName()..":OnPlayerSpawn")
-end)
-
-AddEvent("OnKeyPress", function(key)
-    CallEvent("OMG:"..safeGMName()..":OnKeyPress", key)
-end)
-
-AddEvent("OnKeyRelease", function(key)
-    CallEvent("OMG:"..safeGMName()..":OnKeyRelease", key)
+    wrapPlayerEvent("OnPlayerSpawn")
+    wrapPlayerEvent("OnKeyPress")
+    wrapPlayerEvent("OnKeyRelease")
 end)

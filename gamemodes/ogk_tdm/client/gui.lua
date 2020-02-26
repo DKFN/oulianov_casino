@@ -9,7 +9,6 @@ function CreateGUI()
 end
 
 AddEvent("OMG:OGKTDM:OnPackageStart", function()
-	AddPlayerChat("Started GUI")
 	CreateGUI()
 end)
 

@@ -1,7 +1,7 @@
 -- Onset Gaming Kommunity -- Gungame
 -- Authors : DeadlyKungFu.ninja / Mr Jack / Alcayezz
 
-OGK_GG_DEBUG = true
+OGK_GG_DEBUG = false
 
 players = {}
 player_count = 0
@@ -102,7 +102,7 @@ AddEvent("OnPackageStart", OnPackageStart)
 -- This function is responsible to check synchronisation state between client and server
 AddRemoteEvent("OGKGG:PlayerCheckWeaponSynchro", function(player, weapon, equipped_slot)
     local weaponid = players[player].weapon
-    if (weaponid ~= 0 and Ladder.getWeaponId(weaponid) ~= weapon and Ladder.getWeaponId(weaponid)+20 ~= weapon and Ladder.getWeaponId(weaponid)+40 ~= weapon) then
+    if (weaponid ~= 0 and Ladder.getWeaponId(weaponid) ~= weapon) then
         RefreshWeapons(player)
     end
 end)
@@ -178,7 +178,6 @@ AddEvent("OMG:OGKGG:OnPlayerDeath", OnPlayerDeath)
 
 local function OnPlayerJoin(ply)
     SetPlayerHealth(ply, 0)
-    AddPlayerChatAll("Hey ! " .. GetPlayerName(ply))
     
     -- initation du joueur de base
     p = {}
@@ -258,7 +257,6 @@ end)
 
 AddRemoteEvent("OGKGG:PlayerReady", function(player)
     if not players[player].ingame then
-        AddPlayerChat(player, "Received ready message")
         SetPlayerHealth(player, 0)
         SetPlayerSpectate(player, true)
         assign_spawn(player)

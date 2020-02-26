@@ -32,7 +32,8 @@ local game = {
     launched = nil, -- Timestamp when the game launched,
     ends = nil
 }
-local gmId
+
+local tools
 local debug = false
 
 AddEvent("OnPackageStart", function()
@@ -40,7 +41,7 @@ AddEvent("OnPackageStart", function()
         print("OMG IS NOT SETUP CORRECTLY")
         print("GAMEMODE WILL NOT WORK")
     end
-    gmId = OMG.GameManager.Register("OGKTDM", { 
+    TDM_GMID = OMG.GameManager.Register("OGKTDM", { 
         author = "DeadlyKungFu.Ninja & Kemro", 
         fullName = "Team deathmatch",
         lobby = {
@@ -51,7 +52,8 @@ AddEvent("OnPackageStart", function()
             maxPlayers = 8
         }
     })
-    CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', gmId)
+    tools = OMG._.GetToolBox(TDM_GMID)
+    CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', TDM_GMID)
 end)
 
 AddEvent("OMG:OGKTDM:OnPackageStart", function(data)
@@ -159,9 +161,9 @@ AddEvent("OMG:OGKTDM:OnPlayerSpawn", function(playerid)
     CallEvent("SyncClothes")
 
     SetPlayerHealth(playerid, 9999)
-    AddPlayerChat(playerid, "Anti spawn kill activé")
+    -- AddPlayerChat(playerid, "Anti spawn kill activé")
     Delay(2000, function()
-        AddPlayerChat(playerid, "Anti spawn kill desativé")
+        -- AddPlayerChat(playerid, "Anti spawn kill desativé")
         SetPlayerHealth(playerid, 100)
     end)
     CallRemoteEvent(playerid, "OGKTDM:OpenWeaponMenu")
@@ -193,11 +195,11 @@ AddEvent("OMG:OGKTDM:OnPlayerDeath", function(player, instigator)
     if Players[instigator] and Players[player] and player ~= instigator and Players[player].team ~= Players[instigator].team then
         Players[instigator].points = Players[instigator].points + 50
         teams[Players[instigator].team].points = teams[Players[instigator].team].points + 50
-        AddPlayerChatAll(GetPlayerName(instigator).." killed "..GetPlayerName(player))
+        tools.AddPlayerChatAll(GetPlayerName(instigator).." killed "..GetPlayerName(player))
     end
 
     if player == instigator then
-        AddPlayerChatAll(GetPlayerName(player).." suicided")
+        tools.AddPlayerChatAll(GetPlayerName(player).." suicided")
     end
 end)
 
@@ -258,7 +260,7 @@ CreateTimer(function()
         message = message,
     }
 
-    for k,v in ipairs(OMG._.GetAllPlayers(gmId)) do
+    for k,v in ipairs(OMG._.GetAllPlayers(TDM_GMID)) do
         CallRemoteEvent(v, "OGKTDM:NotifyGameState", json.stringify(gameState))
     end
 end, 1000)
@@ -269,13 +271,13 @@ AddEvent("OGKTDM:ResetGame", function()
     local policePoints = teams.crs.points
 
     if terroPoints > policePoints then
-        AddPlayerChatAll("Terrorists won the round")
-        for k, v in ipairs(GetAllPlayers()) do
+        tools.AddPlayerChatAll("Terrorists won the round")
+        for k, v in ipairs(tools.GetAllPlayers()) do
             CallRemoteEvent(v, "SetWinState", 1)
         end
     elseif policePoints > terroPoints then
-        AddPlayerChatAll("Anti-Police won the round")
-        for k, v in ipairs(GetAllPlayers()) do
+        tools.AddPlayerChatAll("Anti-Police won the round")
+        for k, v in ipairs(tools.GetAllPlayers()) do
             CallRemoteEvent(v, "SetWinState", 2)
         end
     end
@@ -283,7 +285,7 @@ AddEvent("OGKTDM:ResetGame", function()
     teams.rebels.points = 0
     teams.crs.points = 0
 
-    for k, v in ipairs(GetAllPlayers()) do
+    for k, v in ipairs(tools.GetAllPlayers()) do
         SetPlayerHealth(v, 0)
     end
 
@@ -292,7 +294,7 @@ AddEvent("OGKTDM:ResetGame", function()
         gameState = 0
         game.launched = nil
         game.ends = nil
-        for k, v in ipairs(GetAllPlayers()) do
+        for k, v in ipairs(tools.GetAllPlayers()) do
             CallRemoteEvent(v, "SetWinState", 0)
         end
     end)

@@ -7,7 +7,7 @@ local function closeMotd()
     SetInputMode(INPUT_GAME)
     DestroyWebUI(motd)
     CallRemoteEvent("OGKGG:PlayerReady")
-    motd = nul
+    motd = nil
 end
 AddEvent("CloseMotd",  closeMotd)
 

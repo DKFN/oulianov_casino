@@ -73,6 +73,8 @@ function OMG.GameManager.PlayerJoinGameMode(name, player)
     CallRemoteEvent(player, "OMG:_FW:NOTIFY_PLAYERS_IN_GAMEMODE", gamemode.name)
     CallRemoteEvent(player, "OMG:PLAYER_LOAD_GAMEMODE", gamemode.name)
     
+    AddPlayerChatAll('<span color="#006400ff" style="bold" size="13">'..GetPlayerName(player)..'</> joined <span color="#f4f142ff" style="bold" size="13">'..gamemode.name..'</>')
+    
     Delay(1000, function()
     end)
 end
@@ -88,4 +90,5 @@ function OMG.GameManager.PlayerLeaveGameMode(name, player)
     CallEvent("OMG:"..name..":OnPlayerQuit", player)
     CallRemoteEvent(player, "OMG:"..name..":OnPlayerQuit")
     CallRemoteEvent(player, "OMG:_FW:NOTIFY_PLAYERS_LEAVE_GAMEMODE", name)
+    AddPlayerChatAll('<span color="#006400ff" style="bold" size="13">'..GetPlayerName(player)..'</> left <span color="#f4f142ff" style="bold" size="13">'..gamemode.name..'</>')
 end

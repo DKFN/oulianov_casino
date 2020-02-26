@@ -86,7 +86,7 @@ AddEvent("OGKGG:StopVoteMap", function()
             CallEvent('OGKGG:StopVoteMap')
             return
         end
-        AddPlayerChatAll("Next map if no vote is : " .. avaible_map[next_map])
+        OMG._.AddPlayerChatAll(GG_GMID, "Next map if no vote is : " .. avaible_map[next_map])
     end
     
     print("Restting")

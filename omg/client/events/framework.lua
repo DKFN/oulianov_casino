@@ -1,17 +1,17 @@
 AddEvent("OnPackageStart", function()
-    
+    CallEvent("OMG:LOBBY:StartTimers")
 end)
 
 
 AddRemoteEvent("OMG:RECEIVE_GAMEMODES", function(gamemodes)
-    AddPlayerChat("Received gms"..gamemodes)
+    -- AddPlayerChat("Received gms"..gamemodes)
     OMG_DATA.Gamemodes = json.parse(gamemodes)
     CallEvent("OMG:OPEN_LOBBY")
 end)
 
 AddRemoteEvent("OMG:_FW:NOTIFY_PLAYERS_IN_GAMEMODE", function(gamemode)
     OMG_DATA.Gamemode = gamemode
-    AddPlayerChat("Calling ".."OMG:"..gamemode..":OnPackageStart")
+    -- AddPlayerChat("Calling ".."OMG:"..gamemode..":OnPackageStart")
     CallEvent("OMG:"..gamemode..":OnPackageStart")
     CallEvent("OMG:LOBBY:StopTimers")
 end)

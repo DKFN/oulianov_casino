@@ -47,10 +47,6 @@ local function SetUIData(weapon_name, weapon_next, current_map)
 end
 AddRemoteEvent("OGKGG:SetUIData", SetUIData)
 
-AddEvent("WarnShiftToRun", function()
-	ExecuteWebJS(hud, "Warn('<span style=\"color: orange; font-size: 24px;\">PRESS <b>TWICE</b> TO SPRINT</span>')")
-end)
-
 AddEvent("OnWebLoadComplete", function(web)
 	if web == hud then	
 		ExecuteWebJS(hud, "DisplayHit('left')")

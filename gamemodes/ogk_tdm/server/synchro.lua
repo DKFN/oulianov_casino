@@ -16,13 +16,13 @@ end)
 
 AddEvent("SyncClothes", function()
     print("Synching clothes ...")
-    for k, v in ipairs(GetAllPlayers()) do
+    for k, v in ipairs(OMG._.GetAllPlayers(TDM_GMID)) do
        print("Synching clothes ..."..v)
        local player = Players[v]
        if player then
            print("On Player : ".._.str(player))
            -- Notify the player of all players clothes
-           for k, targetPlayer in ipairs(GetAllPlayers()) do
+           for k, targetPlayer in ipairs(OMG._.GetAllPlayers(TDM_GMID)) do
                print("Reforing : ".._.str(targetPlayer))
                local tPlayer = Players[targetPlayer]
                if tPlayer then

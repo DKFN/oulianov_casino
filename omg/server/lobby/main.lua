@@ -7,6 +7,8 @@ Lobby = {
 function Lobby.OnPlayerJoin(player)
     SetPlayerSpawnLocation(player, Lobby.location.x, Lobby.location.y, Lobby.location.z, 0)
     SetPlayerLocation(player, Lobby.location.x, Lobby.location.y, Lobby.location.z, Lobby.location.yaw)
+    SetPlayerPropertyValue(player, "cloth", 3, true)
+    
     _.push(pendingPlayers, player)
 end
 

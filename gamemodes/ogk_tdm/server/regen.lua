@@ -7,7 +7,7 @@ end)
 
 -- 
 CreateTimer(function()
-    for k, v in ipairs(GetAllPlayers()) do
+    for k, v in ipairs(OMG._.GetAllPlayers(TDM_GMID)) do
         local playerHealth = GetPlayerHealth(v)
         if playerHealth < 100 and _.find(awaitRegen, function(p) return p.id == v end) == nil then
             print("Player needs regen"..v)
