@@ -43,7 +43,10 @@
         "gamemodes/ogk_gg/server/votemap.lua",
         "gamemodes/ogk_gg/server/leaderboard.lua",
         "gamemodes/ogk_gg/server/leaderboards.lua",
-        "gamemodes/ogk_gg/server/weapon_ladder.lua"
+        "gamemodes/ogk_gg/server/weapon_ladder.lua",
+        "gamemodes/racing/server/racing.lua",
+        "gamemodes/racing/server/clothes.lua",
+        "gamemodes/racing/server/races.lua"
     ],
     "client_scripts": [
         "omg/utils/json.lua",
@@ -71,7 +74,15 @@
         "gamemodes/ogk_gg/client/items.lua",
         "gamemodes/ogk_gg/client/hud.lua",
         "gamemodes/ogk_gg/client/motd.lua",
-        "gamemodes/ogk_gg/client/sounds.lua"
+        "gamemodes/ogk_gg/client/sounds.lua",
+        "gamemodes/ogk_gg/server/weapon_ladder.lua",
+        "gamemodes/racing/client/cl_racing.lua",
+        "gamemodes/racing/client/cl_spec.lua",
+        "gamemodes/racing/client/cl_clothes.lua",
+        "gamemodes/racing/client/gui.lua",
+        "gamemodes/racing/models/paks.lua",
+        "gamemodes/racing/client/json.lua",
+        "gamemodes/racing/client/radio.lua"
     ],
     "files": [
         "oulianov/loaderUI/index.html",
@@ -121,6 +132,24 @@
         "gamemodes/ogk_gg/sounds/smb/smb_stage_clear.wav",
         "gamemodes/ogk_gg/sounds/smb/smb_gameover.wav",
         "gamemodes/ogk_gg/sounds/quake/prepare.wav",
-        "gamemodes/ogk_gg/sounds/quake/headshot.wav"
+        "gamemodes/ogk_gg/sounds/quake/headshot.wav",
+        "gamemodes/racing/gui/build/index.html",
+        "gamemodes/racing/gui/build/gauge.png",
+        "gamemodes/racing/gui/build/fonts/fr.ttf",
+        "gamemodes/racing/gui/build/fonts/sr.ttf",
+        "gamemodes/racing/gui/build/fonts/lcd.TTF",
+        "gamemodes/racing/gui/build/fonts/sr_i.ttf",
+        "gamemodes/racing/gui/build/fonts/sr_n.ttf",
+        "gamemodes/racing/gui/build/fonts/sr_ni.ttf",
+        "gamemodes/racing/gui/build/static/css/main.css",
+        "gamemodes/racing/gui/build/static/js/2.chunk.js",
+        "gamemodes/racing/gui/build/static/js/main.chunk.js",
+        "gamemodes/racing/gui/build/static/js/runtime-main.js",
+        "gamemodes/racing/sounds/race_end.mp3",
+        "gamemodes/racing/sounds/race_start.mp3",
+        "gamemodes/racing/sounds/checkpoint.mp3",
+        "gamemodes/racing/models/finishline.pak",
+        "gamemodes/racing/models/finishlinerouge.pak",
+        "gamemodes/racing/models/finishlinevert.pak"
     ]
 }

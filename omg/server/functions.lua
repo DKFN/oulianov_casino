@@ -27,19 +27,33 @@ function OMG._.AddPlayerChatAll(gmId, ...)
     end)
 end
 
+function OMG._.CreateObject(gmId, ...)
+    local oId = CreateObject(...)
+    SetObjectDimension(oId, gmId)
+    return oId
+end
+
+function OMG._.CreateVehicle(gmId, ...)
+    local vId = CreateVehicle(...)
+    SetVehicleDimension(vId,gmId)
+    return vId
+end
+
 function OMG._.GetToolBox(gmId)
     local data = _.assign({}, OMG.GameManager.GetGamemode(gmId))
 
     data.GetAllPlayers = function() return OMG._.GetAllPlayers(gmId) end
     data.GetAllObjects = function() return OMG._.GetAllObjects(gmId) end
+    data.CreateObject = function(...) return OMG._.CreateObject(gmId, ...) end
+    data.CreateVehicle = function(...) return OMG._.CreateVehicle(gmId, ...) end
     data.AddPlayerChatAll = function(...) return OMG._.AddPlayerChatAll(gmId, ...) end
     data.GetDimension = function() return gmId end
 
     -- Redirected functions for convenience in case of misuse
-    data.GetPlayerHeading = function(...) return GetPlayerHeading(...) end
-    data.GetPlayerHealth = function(...) return GetPlayerHealth(...) end
-    data.GetPlayerArmor = function(...) return GetPlayerWeapon(...) end
-    data.GetPlaeyrHeadSize = function(...) return GetPlayerHeadSize(...) end
+    -- data.GetPlayerHeading = function(...) return GetPlayerHeading(...) end
+    -- data.GetPlayerHealth = function(...) return GetPlayerHealth(...) end
+    -- data.GetPlayerArmor = function(...) return GetPlayerWeapon(...) end
+    -- data.GetPlaeyrHeadSize = function(...) return GetPlayerHeadSize(...) end
     
     return data
 end

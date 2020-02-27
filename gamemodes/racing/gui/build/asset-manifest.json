@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/oulianov_casino/gamemodes/racing/gui/build/static/css/main.css",
+    "main.js": "/oulianov_casino/gamemodes/racing/gui/build/static/js/main.chunk.js",
+    "main.js.map": "/oulianov_casino/gamemodes/racing/gui/build/static/js/main.chunk.js.map",
+    "runtime-main.js": "/oulianov_casino/gamemodes/racing/gui/build/static/js/runtime-main.js",
+    "runtime-main.js.map": "/oulianov_casino/gamemodes/racing/gui/build/static/js/runtime-main.js.map",
+    "static/js/2.chunk.js": "/oulianov_casino/gamemodes/racing/gui/build/static/js/2.chunk.js",
+    "static/js/2.chunk.js.map": "/oulianov_casino/gamemodes/racing/gui/build/static/js/2.chunk.js.map",
+    "index.html": "/oulianov_casino/gamemodes/racing/gui/build/index.html",
+    "precache-manifest.b2822dbe1a292d3f28382b82044cdb0e.js": "/oulianov_casino/gamemodes/racing/gui/build/precache-manifest.b2822dbe1a292d3f28382b82044cdb0e.js",
+    "service-worker.js": "/oulianov_casino/gamemodes/racing/gui/build/service-worker.js",
+    "static/css/main.css.map": "/oulianov_casino/gamemodes/racing/gui/build/static/css/main.css.map",
+    "static/js/2.chunk.js.LICENSE": "/oulianov_casino/gamemodes/racing/gui/build/static/js/2.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.js",
+    "static/js/2.chunk.js",
+    "static/css/main.css",
+    "static/js/main.chunk.js"
+  ]
+}

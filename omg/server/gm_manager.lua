@@ -51,7 +51,7 @@ function OMG.GameManager.GetPlayerGamemode(playerid)
             return player == playerid
         end)
     end)
-    if gm then return gm else return "LOBBBY" end
+    return gm
 end
 
 function OMG.GameManager.Remove(name)
@@ -73,7 +73,7 @@ function OMG.GameManager.PlayerJoinGameMode(name, player)
     CallRemoteEvent(player, "OMG:_FW:NOTIFY_PLAYERS_IN_GAMEMODE", gamemode.name)
     CallRemoteEvent(player, "OMG:PLAYER_LOAD_GAMEMODE", gamemode.name)
     
-    AddPlayerChatAll('<span color="#006400ff" style="bold" size="13">'..GetPlayerName(player)..'</> joined <span color="#f4f142ff" style="bold" size="13">'..gamemode.name..'</>')
+    AddPlayerChatAll('<span color="#006400ff" style="bold" size="13">'..GetPlayerName(player)..'</> joined <span color="#f4f142ff" style="bold" size="13">'..gamemode.name..'</> by <span color="#ab0000ff" style="bold" size="13">'..gamemode.params.author..'</>')
     
     Delay(1000, function()
     end)

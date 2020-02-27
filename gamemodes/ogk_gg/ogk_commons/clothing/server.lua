@@ -7,7 +7,7 @@
 local function SendPlayerSkin(requesterId, playerId)
     print("Cloth request by "..requesterId.." for "..playerId)
     if players[playerId] and players[playerId].skin then
-        print("Delayed skin sending")
+        print("Skin sending")
         CallRemoteEvent(requesterId, "OGK:CLOTHING:ReceivePlayerClothes", playerId, players[playerId].skin)
     else
         print("Delayed skin sending")

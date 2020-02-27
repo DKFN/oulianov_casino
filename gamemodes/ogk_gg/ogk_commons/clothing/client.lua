@@ -7,7 +7,7 @@ function setClothe(player, clothId)
 end
 AddRemoteEvent("OGK:CLOTHING:ReceivePlayerClothes", setClothe)
 
-AddEvent("OnPlayerStreamIn", function(player, otherplayer)
+AddEvent("OMG:OGKGG:OnPlayerStreamIn", function(player, otherplayer)
     CallRemoteEvent("OGK:CLOTHING:AskPlayerClothes", player, otherplayer)
 end)
 

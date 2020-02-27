@@ -1,6 +1,7 @@
 
 AddEvent("OnPackageStart", function()
     CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/oulianov/lobby_1.ini", 0)
+    CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/oulianov/lobby_2.ini", 0)
     CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/oulianov/lobby_testslot.ini", 0)
 end)
 
