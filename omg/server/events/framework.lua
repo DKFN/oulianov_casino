@@ -3,6 +3,15 @@ AddEvent("OnPlayerJoin", function(player)
     Lobby.OnPlayerJoin(player)
 end)
 
+AddEvent("OnPlayerQuit", function(player)
+    AddPlayerChatAll('<span color="#f4f142ff" style="bold" size="13">'..GetPlayerName(player)..'</> left the server')
+    local gamemode = OMG.GameManager.GetPlayerGamemode(player)
+    if gamemode then
+        OMG.GameManager.PlayerLeaveGameMode(gamemode.name, player)
+    end
+end)
+
+
 AddEvent("OnPlayerChat", function(player, text)
     local gamemode = OMG.GameManager.GetPlayerGamemode(player)
     local gmText = "LOBBY"

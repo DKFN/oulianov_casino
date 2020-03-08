@@ -24,28 +24,10 @@ AddEvent("OnPackageStart", function()
     wrapPlayerEvent("OnPlayerChat")
     wrapPlayerEvent("OnPlayerChatCommand")
     wrapPlayerEvent("OnPlayerInteractDoor")
+
     wrapPlayerEvent("OnPlayerEnterVehicle")
     wrapPlayerEvent("OnPlayerLeaveVehicle")
     wrapPlayerEvent("OnPlayerStateChange")
 
 
 end)
-
-
--- AddEvent("OnPlayerDeath", function(victim, ...)
---     CallEvent("OMG:"..safePlayerGMName(victim)..":OnPlayerDeath", victim, ...)
--- end)
-
--- AddEvent("OnPlayerWeaponShot", function(player, ...)
---     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerWeaponShot", player, ...)
--- end)
-
--- AddEvent("OnPlayerQuit", function(player)
---     OMG.GameManager.PlayerLeaveGameMode(player)
---     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerQuit", player)
--- end)
-
--- AddEvent("OnPlayerSpawn", function(player)
---     CallEvent("OMG:"..safePlayerGMName(player)..":OnPlayerSpawn", player)
--- end)
-

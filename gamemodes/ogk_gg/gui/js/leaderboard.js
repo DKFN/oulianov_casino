@@ -26,7 +26,7 @@ const renderPlayer = (player, k) => {
     const playerImage = images[player.id];
     const playerImageURL = playerImage 
         ? `data:image/jpg;base64,${playerImage}`
-        : "http://asset/ogk_gg/gui/images/loader.gif";
+        : "http://asset/oulianov_casino/gamemodes/ogk_gg/gui/images/loader.gif";
 
     const template = `
         <div class="leaderboard_row ${k === 0 ? "leader" : ""}" id="row">

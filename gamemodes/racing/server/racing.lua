@@ -58,7 +58,7 @@ function changerace()
          SetPlayerSpawnLocation(v, racing_spawns[racesnumbers[currace]][i+1][1], racing_spawns[racesnumbers[currace]][i+1][2], racing_spawns[racesnumbers[currace]][i+1][3], racing_spawns[racesnumbers[currace]][1])
          SetPlayerHealth(v, 0)
          CallRemoteEvent(v,"SpecRemoteEvent",false)
-         CallRemoteEvent(v,"classement_update",i,GetPlayerCount(),true)
+         CallRemoteEvent(v,"classement_update",i,tools.GetPlayerCount(),true)
       end
    end
 end
@@ -202,7 +202,7 @@ AddEvent("OMG:RACING:OnPlayerQuit",function(ply)
       end
    end
 end
-   if GetPlayerCount()<2 then
+   if tools.GetPlayerCount() < 2 then
       for i,v in ipairs(checkpoints) do
          DestroyObject(v)
        end
@@ -264,7 +264,7 @@ function timercheck()
                if i2 == #checkpoints then
                   table.insert(finishclassement,v.ply)
                   place = #finishclassement
-                  CallRemoteEvent(v.ply,"classement_update",place,GetPlayerCount())
+                  CallRemoteEvent(v.ply,"classement_update",place,tools.GetPlayerCount())
                   table.remove(playerscheckpoints,i)
                   if #playerscheckpoints>0 then
                            SetPlayerPropertyValue(v.ply,"leavingtospec",true,false)
@@ -341,7 +341,7 @@ function timercheck()
             lc.ply = v
             lc.lplace = place
             table.insert(lastclassement,lc)
-            CallRemoteEvent(v,"classement_update",place,GetPlayerCount())
+            CallRemoteEvent(v,"classement_update",place,tools.GetPlayerCount())
          end
       end
    end

@@ -1,3 +1,5 @@
+
+-- TODO: Honestly it kinda sucks, remove
 local function ReplaceObject(replaceId, pakname, meshPath)
 	local res = LoadPak(pakname, "/"..pakname.."/", "../../../OnsetModding/Plugins/"..pakname.."/Content")
 	if not res then

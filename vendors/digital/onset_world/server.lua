@@ -22,11 +22,10 @@ local DoorConfig = {
 }
 
 function World_LoadWorld(filename, dimension)
-  if WorldLoaded then return end
   if IsPackageStarted('sandbox') then return error('ERROR: Not loading world since sandbox package is enabled, this package should only be used when sandbox is disabled.') end
   WorldLoaded = true
 
-  print('Server: Attempting to load world.')
+  print('Server: Attempting to load '..filename)
 
   local _table = File_LoadJSONTable(filename)
   if _table ~= nil then
@@ -38,7 +37,7 @@ function World_LoadWorld(filename, dimension)
       end
     end
 
-    print('Server: World loaded!')
+    print('Server: '..filename..' loaded!')
   else
     print('Server: No world.json found in root server directory, one will be made next time the server saves.')
   end

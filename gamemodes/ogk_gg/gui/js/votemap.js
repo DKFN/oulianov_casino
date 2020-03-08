@@ -4,7 +4,7 @@ let maps = [];
 let votes = [];
 
 const buildMap = (map, container) => {
-    const mapImage = "http://asset/ogk_gg/gui/images/maps/"+map.name+".jpg";
+    const mapImage = "http://asset/oulianov_casino/gamemodes/ogk_gg/gui/images/maps/"+map.name+".jpg";
     const locked = map.available ? '' : 'locked';
 
     const callBack = map.available ? () => {

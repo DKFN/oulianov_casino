@@ -1,7 +1,7 @@
 -- Onset Gaming Kommunity -- Gungame
 -- Authors : DeadlyKungFu.ninja / Mr Jack / Alcayezz
 
-OGK_GG_DEBUG = false
+OGK_GG_DEBUG = true
 
 players = {}
 player_count = 0
@@ -13,14 +13,14 @@ player_count = 0
 -- current_map = "spawn_zone"
 -- current_map = "gg2"
 -- current_map = "trucks_center"
-current_map = "tropico"
--- current_map = "alien_attack"
+-- current_map = "tropico"
+current_map = "alien_attack"
 -- current_map = "hangar"
 -- current_map = "concrete_graveyard"
 
-avaible_map = {"western", "armory", "port", "port_small", "trucks_center", "tropico"} -- "paradise_ville", "chemistry"}
-avaible_map_count = 6
-last_map = 6
+avaible_map = {"western", "armory", "port", "port_small", "trucks_center", "tropico", "alien_attack"} -- "paradise_ville", "chemistry"}
+avaible_map_count = 7
+last_map = 7
 
 OGK_GAMEMODE = "OGK_GG"
 
@@ -63,8 +63,7 @@ function OnPackageStart()
     })
    
     local toolz = OMG._.GetToolBox(GG_GMID)
-    CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', GG_GMID)
-    CallEvent('Digital:World:LoadWorld', 'world_salsi_alien_attack.json', GG_GMID)
+    -- CallEvent('Digital:World:LoadWorld', 'kemro_bod.json', GG_GMID)
 
     CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/gamemodes/ogk_gg/maps/armory.ini", GG_GMID)
 	CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/gamemodes/ogk_gg/maps/armory_leaderblock.ini", GG_GMID)
@@ -91,7 +90,7 @@ function OnPackageStart()
 	CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/gamemodes/ogk_gg/maps/hangar.ini", GG_GMID)
 	CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/gamemodes/ogk_gg/maps/hangarwalls.ini", GG_GMID)
 	CallEvent("BlueMountainsIO:MapLoader:LoadIni", "packages/oulianov_casino/gamemodes/ogk_gg/maps/hangar_spawns.ini", GG_GMID)
-
+    CallEvent('Digital:World:LoadWorld', 'salsi_aa.json', GG_GMID)
     print("TOOOOLS")
     _.print(toolz)
     _.print(OMG.OGK_GG)
