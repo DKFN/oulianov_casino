@@ -15,6 +15,7 @@ Special thanks to all the ppl I met during my Onset adventures and that helped b
 
  - Synyster for the Casino custom models
  - Kemro for the models and the maps of the TDM
+ - Voltaism for including the racing framework
  - SalsiTV for the awesome alien_attack map
  - OGK TeamMates with whom we had so much fun coding GG together
  
